@@ -6,6 +6,7 @@
 package slide3.pag17;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,7 +20,7 @@ public class ThreadObserver extends Thread {
     public int listSize;
     
     public ThreadObserver(ArrayList<Thread> list, int listSize) {
-        this.list = list;
+        this.list = new ArrayList<>(list);
         this.listSize = listSize;
     }
 
@@ -39,19 +40,21 @@ public class ThreadObserver extends Thread {
         return list;
     }
     
-    @Override
-    public void run() {        
+     @Override
+    public void run() {
         while(true){
-            for(int i = 0; i < this.listSize; i++){
-                if(list.get(i).interrupted()){
-                    System.out.println("Sou ThreadObserver e a Thread " + list.get(i).getId() + " foi interrompida.");                    
-                }
+            System.out.println("\n\nThreads Interrompidas:");
+            for(int i = 0; i<listSize; i++){
+                if(list.get(i).isInterrupted()){
+                    System.out.println("ThreadObserver say: A thread " + list.get(i).getId() + " foi interrompida.");
+                }                    
             }
+            System.out.println("\n");
             try {
-                sleep(1000);
+                Thread.currentThread().sleep(5000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(ThreadObserver.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }        
-    }    
+        }    
+    }
 }

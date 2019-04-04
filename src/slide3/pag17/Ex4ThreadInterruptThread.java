@@ -7,40 +7,26 @@ package slide3.pag17;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author a1602020
  */
-public class Ex4ThreadInterruptThread extends Thread {
-
-    @Override
-    public void run() {
-        while(true){
-            Random rand = new Random();
-            int n = rand.nextInt(10);
-            int tempo = n * 1000;
-            try {
-                this.sleep(tempo);
-            } catch (InterruptedException ex) {
-                System.out.println("Sou a Thread " + this.getId() + " e morri.");
-                return;
-            }        
-        }
-    }
+public class Ex4ThreadInterruptThread{   
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ArrayList<Thread> lista = new ArrayList();
-        for(int i = 0; i<10; i++){
-            Thread t = new Thread(new Ex4ThreadInterruptThread());
+        for(int i = 0; i<5; i++){
+            Thread t = new ThreadExec();
             t.start();
-            lista.add(t);
+            lista.add(t);  
         }
-        ThreadObserver to = new ThreadObserver(lista, lista.size());
+        Thread ti = new ThreadInterrupt(lista,lista.size());
+        ti.start(); 
+        Thread to = new ThreadObserver(lista, lista.size());
         to.start();
-        ThreadInterruptor ti = new ThreadInterruptor(lista, lista.size());
-        ti.start();
-        System.out.println("Main thread execution completes"); 
     }
     
 }
