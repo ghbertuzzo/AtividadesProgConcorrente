@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/giova/Documents/NetBeansProjects/AtividadesProgConcorrente/src/slide6a/Monitores/Ex1Main.java</file>
-            <file>file:/C:/Users/giova/Documents/NetBeansProjects/AtividadesProgConcorrente/src/slide6a/Monitores/Ex1CircularProducerConsumer.java</file>
-            <file>file:/C:/Users/giova/Documents/NetBeansProjects/AtividadesProgConcorrente/src/slide6a/Monitores/Produtor.java</file>
-            <file>file:/C:/Users/giova/Documents/NetBeansProjects/AtividadesProgConcorrente/src/slide6a/Monitores/Consumidor.java</file>
+            <file>file:/C:/Users/giova/Documents/NetBeansProjects/AtividadesProgConcorrente/src/slide6a/Monitores/ThreadObserver.java</file>
+            <file>file:/C:/Users/giova/Documents/NetBeansProjects/AtividadesProgConcorrente/src/slide6a/Monitores/Ex3BoundedCounter.java</file>
+            <file>file:/C:/Users/giova/Documents/NetBeansProjects/AtividadesProgConcorrente/src/slide6a/Monitores/Ex2Main.java</file>
+            <file>file:/C:/Users/giova/Documents/NetBeansProjects/AtividadesProgConcorrente/src/slide6a/Monitores/ThreadDecrement.java</file>
+            <file>file:/C:/Users/giova/Documents/NetBeansProjects/AtividadesProgConcorrente/src/slide6a/Monitores/ThreadIncrement.java</file>
+            <file>file:/C:/Users/giova/Documents/NetBeansProjects/AtividadesProgConcorrente/src/slide6a/Monitores/Ex3Main.java</file>
         </group>
     </open-files>
 </project-private>
