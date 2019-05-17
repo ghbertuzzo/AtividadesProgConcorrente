@@ -5,68 +5,70 @@
  */
 package slide6a.Monitores;
 
-import slide6.ProdutorConsumidor.*;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author a1602020
  */
 public class Ex1CircularProducerConsumer {
-    
-    public static void main(String[] args) {
-        
-        Objeto objeto = new Objeto("");
-        
-        Thread producer = new Thread(() -> {
-            while (true) {
-                Random rand = new Random();                
-                int n = rand.nextInt(5);
-                int tempo = n * 1000;
-                try {
-                    Thread.currentThread().sleep(tempo);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(Ex1CircularProducerConsumer.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                synchronized (objeto) {
-                    if (objeto.getBuffer().isEmpty()) {
-                        objeto.setBuffer("Novo Objeto");
-                        System.out.println("Produtor say: New Object produced -> " + objeto.getBuffer());
 
-                        objeto.notify();
+    int[] buffer;
+    int readpos;
+    int writepos;
+    int tam;
+    int sizelements;
+    Object monitor;
 
-                    } else {
-                        try {
-                            objeto.wait();
-                        } catch (InterruptedException ex) {
-                            Logger.getLogger(Ex1CircularProducerConsumer.class.getName()).log(Level.SEVERE, null, ex);
-                        }                        
-                    }
-                }
-            }
-        });
-        producer.start();
-        
-        Thread consumer = new Thread(() -> {
-            while (true) {
-                synchronized (objeto) {
-                    if (!objeto.getBuffer().isEmpty()) {
-                        System.out.println("Consumer say: New Object consumed " + objeto.getBuffer());
-                        objeto.setBuffer("");
-                        objeto.notify();
-                    } else {
-                        try {
-                            objeto.wait();
-                        } catch (InterruptedException ex) {
-                            Logger.getLogger(Ex1CircularProducerConsumer.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
-                }
-            }
-        });
-        consumer.start();
+    public Ex1CircularProducerConsumer(int tam) {
+        this.buffer = new int[tam];
+        this.readpos = 0;
+        this.writepos = 0;
+        this.tam = tam;
+        this.sizelements = 0;
+        monitor = new Object();
     }
-    
+
+    public void stort() {
+        Consumidor consumidor = new Consumidor(this);
+        Produtor produtor = new Produtor(this);
+        consumidor.start();
+        produtor.start();
+    }
+
+    public synchronized void consume() throws InterruptedException {
+        while (this.sizelements == 0) {
+            this.wait();
+            System.out.println("Buffer Vazio!");
+        }
+        int nextSlot = this.writepos - this.tam;
+        if (nextSlot < 0) {
+            nextSlot += this.tam;
+        }
+        int retorno = this.buffer[nextSlot];
+        this.sizelements--;
+        System.out.println("Consumido " + retorno + "pos "+nextSlot);
+        this.notifyAll();
+
+    }
+
+    public synchronized void produce() throws InterruptedException {
+        while (this.sizelements == this.tam) {
+            wait();
+            System.out.println("Buffer Cheio!");
+        }
+        if (this.sizelements < this.tam) {
+            if (this.writepos >= this.tam) {
+                this.writepos = 0;
+            }
+            Random rand = new Random();
+            int n = rand.nextInt(5);
+            this.buffer[this.writepos] = n;
+            this.writepos++;
+            this.sizelements++;
+            System.out.println("Produzido " + n + " pos "+(this.writepos-1));
+            notify();
+        }
+    }
+
 }
