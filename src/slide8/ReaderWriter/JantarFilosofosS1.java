@@ -3,13 +3,7 @@ package slide8.ReaderWriter;
 import static java.lang.Thread.sleep;
 import java.util.Random;
 import java.util.concurrent.Semaphore;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-/**
- *
- * @author a1602020
- */
 public class JantarFilosofosS1 {
 
     int numberResources = 0;
