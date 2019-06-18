@@ -16,12 +16,12 @@ public class SequentialOneDimensional {
     float [] initialVector;
     float [] finalVector;
 
-    public SequentialOneDimensional(int size) {
+    public SequentialOneDimensional(int size, int loop) {
         this.initialVector = new float[size];
         this.finalVector = new float[size];
         generateVector();
         firstProcess();
-        process(100);
+        process(loop);
     }
 
     private void generateVector() {

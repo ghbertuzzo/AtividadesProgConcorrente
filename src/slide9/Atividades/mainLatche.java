@@ -9,8 +9,8 @@ package slide9.Atividades;
  *
  * @author a1602020
  */
-public class mainSequential {
-    public static void main(String[] args) {
-        SequentialOneDimensional sod = new SequentialOneDimensional(10,100);
+public class mainLatche {
+    public static void main(String[] args) throws InterruptedException {
+        LatcheOneDimensional lod = new LatcheOneDimensional(10,100);
     }
 }
