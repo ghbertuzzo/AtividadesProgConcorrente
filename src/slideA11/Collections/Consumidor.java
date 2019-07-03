@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package slideA10.Collections;
+package slideA11.Collections;
 
-import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,11 +13,11 @@ import java.util.logging.Logger;
  *
  * @author a1602020
  */
-public class Produtor implements Runnable {
+public class Consumidor extends Thread{
     
     ArrayBlockingQueue<String> array;
-
-    public Produtor(ArrayBlockingQueue<String> array) {
+    
+    public Consumidor(ArrayBlockingQueue<String> array){
         this.array = array;
     }
 
@@ -28,21 +27,14 @@ public class Produtor implements Runnable {
             try {
                 Thread.currentThread().sleep(1000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(Produtor.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Consumidor.class.getName()).log(Level.SEVERE, null, ex);
             }
             try {
-                produz();
+                System.out.println("Thread "+Thread.currentThread().getName()+" Consumi: "+array.take());
             } catch (InterruptedException ex) {
-                Logger.getLogger(Produtor.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Consumidor.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-    }
-
-    public void produz() throws InterruptedException {
-        Random rand = new Random();
-        Integer num = rand.nextInt(100);
-        System.out.println("Thread "+Thread.currentThread().getName()+" Produzi: Objeto "+num);
-        array.put("Objeto "+num);
     }
     
 }

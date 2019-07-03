@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package slideA10.Collections;
+package slideA11.Collections;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import javax.swing.JOptionPane;
