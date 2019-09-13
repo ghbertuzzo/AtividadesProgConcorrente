@@ -1,24 +1,21 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
  */
+
 package slide6a.Monitores;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author giova
- */
 public class ThreadObserver extends Thread {
-    
+
     Ex3BoundedCounter ex;
     int time;
     int min;
     int max;
-    
+
     public ThreadObserver(Ex3BoundedCounter ex, int time, int min, int max) {
         this.ex = ex;
         this.time = time;
@@ -28,15 +25,15 @@ public class ThreadObserver extends Thread {
 
     @Override
     public synchronized void run() {
-        while(true){
-            if(ex.boundedCounter>max){
+        while (true) {
+            if (ex.boundedCounter > max) {
                 System.out.println("Atingiu limite máximo!");
                 ex.interruptIncrement();
-            }else if(ex.boundedCounter<min){
+            } else if (ex.boundedCounter < min) {
                 System.out.println("Atingiu limite minimo!");
                 ex.interruptDecrement();
-            }else{
-                System.out.println("Bounded Value: "+this.ex.boundedCounter);                
+            } else {
+                System.out.println("Bounded Value: " + this.ex.boundedCounter);
             }
             try {
                 sleep(this.time);
@@ -45,7 +42,7 @@ public class ThreadObserver extends Thread {
             }
         }
     }
-    
+
     public void sleep(int val) throws InterruptedException {
         Thread.sleep(val);
     }

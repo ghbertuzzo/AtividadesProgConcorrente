@@ -1,28 +1,29 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
+
+    Faça uma classe ArrayListThreadSafe usando ReadWriteLock.
+    Teste usando threads que realizam leitura e escrita para essa
+    estrutura.
  */
+
 package slide9.Locks;
 
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-/**
- *
- * @author giova
- */
 public class ArrayListThreadSafe {
-    
+
     String content;
     ReentrantReadWriteLock readWriteLock;
 
     public ArrayListThreadSafe() {
         this.content = "";
         this.readWriteLock = new ReentrantReadWriteLock();
-    
+
     }
-    
-    public void escrever(String texto){
+
+    public void escrever(String texto) {
         this.readWriteLock.writeLock().lock();
         try {
             this.content += texto;
@@ -30,9 +31,8 @@ public class ArrayListThreadSafe {
             this.readWriteLock.writeLock().unlock();
         }
     }
-    
-    
-    public String ler(){
+
+    public String ler() {
         this.readWriteLock.readLock().lock();
         try {
             return this.content;

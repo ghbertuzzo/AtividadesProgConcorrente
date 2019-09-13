@@ -1,18 +1,18 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
+    
+    3. Faça um programa Java que envia interrupções para as
+    threads dos exercı́cios anteriores. As threads devem fazer o
+    tratamento dessas interrupções e realizar uma finalização
+    limpa.
  */
+
 package slide3.pag17;
 
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-/**
- *
- * @author a1602020
- */
 public class Ex3ThreadInterrupt extends Thread {
 
     @Override

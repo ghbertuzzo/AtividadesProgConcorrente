@@ -1,23 +1,20 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
  */
+
 package slide3.pag28;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author giova
- */
 public class ThreadMergeSort extends Thread {
-    
+
     int[] vector;
     int tamanho;
-    
-    public ThreadMergeSort(int[] vetor, int tamanho){
+
+    public ThreadMergeSort(int[] vetor, int tamanho) {
         this.vector = vetor;
         this.tamanho = tamanho;
     }
@@ -31,5 +28,5 @@ public class ThreadMergeSort extends Thread {
             Logger.getLogger(ThreadMergeSort.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
 }

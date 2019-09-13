@@ -1,27 +1,27 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
+
+    1. Atividade: Implemente uma solução para o problema do
+    Produtor-Consumidor
  */
+
 package slide6.ProdutorConsumidor;
 
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author a1602020
- */
 public class ProducerConsumer {
-    
+
     public static void main(String[] args) {
-        
+
         Objeto objeto = new Objeto("");
-        
+
         Thread producer = new Thread(() -> {
             while (true) {
-                Random rand = new Random();                
+                Random rand = new Random();
                 int n = rand.nextInt(5);
                 int tempo = n * 1000;
                 try {
@@ -41,13 +41,13 @@ public class ProducerConsumer {
                             objeto.wait();
                         } catch (InterruptedException ex) {
                             Logger.getLogger(ProducerConsumer.class.getName()).log(Level.SEVERE, null, ex);
-                        }                        
+                        }
                     }
                 }
             }
         });
         producer.start();
-        
+
         Thread consumer = new Thread(() -> {
             while (true) {
                 synchronized (objeto) {
@@ -67,5 +67,5 @@ public class ProducerConsumer {
         });
         consumer.start();
     }
-    
+
 }

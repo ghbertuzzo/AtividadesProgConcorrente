@@ -1,16 +1,23 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
+
+    Problema: One-Dimensional Stencil
+    Implementação: Barreiras cíclicas
+        - Criar uma barreira cíclica com N-2 partes.
+        - Criar N-2 tarefas para serem executadas em paralelo por threads.
+        - No final de cada iteração, cada thread espera na barreira até todas outras alcançarem.
+        - Arrays são invertidos e nova iteração inicia.
+        Observar que:
+            - Nenhuma thread é liberada depois de cada iteração, então o thread 
+            pool deve ter no mínimo o número de tarefas (N-2).
  */
+
 package slide9.Atividades;
 
 import java.util.concurrent.CyclicBarrier;
 
-/**
- *
- * @author giova
- */
 public class ThreadPrincipal extends Thread {
 
     double[] vetor;

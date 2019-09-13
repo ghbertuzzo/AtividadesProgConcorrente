@@ -1,7 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
+
+    2. Faça uma thread Java que realize a leitura de um arquivo
+    texto com frases e exiba as frases a cada 10 segundos.
  */
 package slide3.pag17;
 
@@ -9,18 +12,13 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import static java.lang.Thread.sleep;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author a1602020
- */
 public class Ex2ThreadFrasesTxt {
-    
+
     private static final String FILENAME = "src/slide3/pag17/frases.txt";
-    
+
     public static void main(String[] args) {
         // TODO code application logic here
         Thread t = new Thread(() -> {
@@ -49,6 +47,6 @@ public class Ex2ThreadFrasesTxt {
                 }
             }
         });
-        t.start();        
+        t.start();
     }
 }

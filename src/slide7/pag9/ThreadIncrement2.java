@@ -1,28 +1,25 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
  */
+
 package slide7.pag9;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author giova
- */
 public class ThreadIncrement2 extends Thread {
-    
+
     Ex4Multiplex ex4;
-    
-    public ThreadIncrement2(Ex4Multiplex ex){
+
+    public ThreadIncrement2(Ex4Multiplex ex) {
         this.ex4 = ex;
     }
-    
+
     @Override
     public void run() {
-        while (true) {  
+        while (true) {
             try {
                 this.ex4.increment();
             } catch (InterruptedException ex) {

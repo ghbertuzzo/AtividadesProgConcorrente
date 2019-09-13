@@ -1,16 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
  */
+
 package slide6a.Monitores;
 
 import java.util.Random;
 
-/**
- *
- * @author a1602020
- */
 public class Ex1CircularProducerConsumer {
 
     int[] buffer;
@@ -47,7 +44,7 @@ public class Ex1CircularProducerConsumer {
         }
         int retorno = this.buffer[nextSlot];
         this.sizelements--;
-        System.out.println("Consumido " + retorno + "pos "+nextSlot);
+        System.out.println("Consumido " + retorno + "pos " + nextSlot);
         this.notifyAll();
 
     }
@@ -66,7 +63,7 @@ public class Ex1CircularProducerConsumer {
             this.buffer[this.writepos] = n;
             this.writepos++;
             this.sizelements++;
-            System.out.println("Produzido " + n + " pos "+(this.writepos-1));
+            System.out.println("Produzido " + n + " pos " + (this.writepos - 1));
             notify();
         }
     }

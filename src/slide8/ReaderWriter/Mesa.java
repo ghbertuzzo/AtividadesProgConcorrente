@@ -1,15 +1,23 @@
+/*
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
+
+    Solução 3 para o Jantar dos Filósofos
+ */
+
 package slide8.ReaderWriter;
 
 public class Mesa {
-    
-   final static int PENSANDO = 1;
-   final static int COMENDO = 2;
-   final static int FOME = 3;
-   final static int NR_FILOSOFOS = 5;
-   final static int PRIMEIRO_FILOSOFO = 0;
-   final static int ULTIMO_FILOSOFO = NR_FILOSOFOS - 1;
-   boolean[] fork = new boolean[NR_FILOSOFOS];
-   int[] filosofos = new int[NR_FILOSOFOS];
+
+    final static int PENSANDO = 1;
+    final static int COMENDO = 2;
+    final static int FOME = 3;
+    final static int NR_FILOSOFOS = 5;
+    final static int PRIMEIRO_FILOSOFO = 0;
+    final static int ULTIMO_FILOSOFO = NR_FILOSOFOS - 1;
+    boolean[] fork = new boolean[NR_FILOSOFOS];
+    int[] filosofos = new int[NR_FILOSOFOS];
 
     public Mesa() {
         for (int i = 0; i < 5; i++) {
@@ -62,10 +70,10 @@ public class Mesa {
         return esquerdo;
     }
 
-   public int garfoEsquerdo (int filosofo){
-      int garfoEsquerdo = filosofo;
-      return garfoEsquerdo;
-   }
+    public int garfoEsquerdo(int filosofo) {
+        int garfoEsquerdo = filosofo;
+        return garfoEsquerdo;
+    }
 
     public int garfoDireito(int filosofo) {
         int garfoDireito;
@@ -96,5 +104,5 @@ public class Mesa {
         }
         System.out.println("]");
     }
-    
+
 }

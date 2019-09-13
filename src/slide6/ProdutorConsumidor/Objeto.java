@@ -1,17 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
+
+    1. Atividade: Implemente uma solução para o problema do
+    Produtor-Consumidor
  */
+
 package slide6.ProdutorConsumidor;
 
-/**
- *
- * @author a1602020
- */
 public class Objeto {
-    
-    public String buffer;    
+
+    public String buffer;
 
     public Objeto(String buffer) {
         this.buffer = buffer;
@@ -23,6 +23,6 @@ public class Objeto {
 
     public void setBuffer(String buffer) {
         this.buffer = buffer;
-    }    
-    
+    }
+
 }

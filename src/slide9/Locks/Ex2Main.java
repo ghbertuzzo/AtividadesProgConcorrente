@@ -1,16 +1,15 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
+
+    Crie uma classe SharedFifoQueue e use Conditions para
+    controlar se a fila está vazia ou cheia. Teste usando threads
+    produtoras e consumidoras.
  */
+
 package slide9.Locks;
 
-import java.util.Random;
-
-/**
- *
- * @author giova
- */
 public class Ex2Main {
     
     public static void main(String[] args) {

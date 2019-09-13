@@ -1,18 +1,18 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
+
+    2. Faça um programa em Java para testar um conjunto de
+    operações sobre um grupo de threads. Use o ThreadGroup.
  */
+
 package slide3.pag28;
 
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author a1602020
- */
 public class Ex2GroupThread extends Thread{
     
     ThreadGroup threadGroup;

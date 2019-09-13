@@ -1,14 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
+
+    Solução Sequêncial Problema: One-Dimensional Stencil
  */
+
 package slide9.Atividades;
 
-/**
- *
- * @author a1602020
- */
 public class mainSequential {
     public static void main(String[] args) {
         SequentialOneDimensional sod = new SequentialOneDimensional(10,100);

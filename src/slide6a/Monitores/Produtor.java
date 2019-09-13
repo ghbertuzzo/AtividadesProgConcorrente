@@ -1,29 +1,26 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
  */
+
 package slide6a.Monitores;
 
 import static java.lang.Thread.sleep;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author giova
- */
 public class Produtor extends Thread {
 
     Ex1CircularProducerConsumer mymonitor;
-    
+
     public Produtor(Ex1CircularProducerConsumer myclass) {
         this.mymonitor = myclass;
     }
 
     @Override
     public void run() {
-        while(true){
+        while (true) {
             try {
                 this.mymonitor.produce();
             } catch (InterruptedException ex) {
@@ -37,5 +34,4 @@ public class Produtor extends Thread {
         }
     }
 
-    
 }

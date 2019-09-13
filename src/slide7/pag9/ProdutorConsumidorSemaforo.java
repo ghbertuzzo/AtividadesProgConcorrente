@@ -1,16 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
  */
+
 package slide7.pag9;
 
 import java.util.concurrent.Semaphore;
 
-/**
- *
- * @author a1602020
- */
 public class ProdutorConsumidorSemaforo {
     
     public final int SIZEBUFFER = 10;
@@ -21,9 +18,7 @@ public class ProdutorConsumidorSemaforo {
     Semaphore consumidores = new Semaphore(0);
     Semaphore controlador = new Semaphore(1);
     
-    public static void main(String[] args) { 
-    
-        
+    public static void main(String[] args) {         
         
     }
     

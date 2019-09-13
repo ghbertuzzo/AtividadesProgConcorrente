@@ -1,3 +1,11 @@
+/*
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
+
+    Solução 1 para o Jantar dos Filósofos
+ */
+
 package slide8.ReaderWriter;
 
 import java.util.logging.Level;
@@ -16,7 +24,7 @@ public class FilosofosS1 extends Thread {
     @Override
     public void run() {
         int cont = 0;
-        while (cont!=10) {
+        while (cont != 10) {
             try {
                 jf.thinking(this.id);
             } catch (InterruptedException ex) {

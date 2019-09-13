@@ -1,19 +1,16 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
  */
+
 package slide6a.Monitores;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author giova
- */
-public class ThreadSleeper extends Thread{
-    
+public class ThreadSleeper extends Thread {
+
     Ex2ThreadCountSleep exs;
 
     public ThreadSleeper(Ex2ThreadCountSleep ex) {

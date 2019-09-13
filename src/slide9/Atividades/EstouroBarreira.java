@@ -1,14 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo
+
+    Problema: One-Dimensional Stencil    
  */
+
 package slide9.Atividades;
 
-/**
- *
- * @author giova
- */
 public class EstouroBarreira implements Runnable {
 
     ThreadPrincipal stCode;

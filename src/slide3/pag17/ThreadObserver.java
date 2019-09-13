@@ -1,24 +1,20 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Universidade Tecnológica Federal do Paraná - UTFPR
+    Disciplina Optativa: Programação Concorrente
+    Autor: Giovani Henrique Bertuzzo    
  */
+
 package slide3.pag17;
 
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author a1602020
- */
 public class ThreadObserver extends Thread {
 
     public ArrayList<Thread> list;
     public int listSize;
-    
+
     public ThreadObserver(ArrayList<Thread> list, int listSize) {
         this.list = new ArrayList<>(list);
         this.listSize = listSize;
@@ -39,15 +35,15 @@ public class ThreadObserver extends Thread {
     public ArrayList<Thread> getList() {
         return list;
     }
-    
-     @Override
+
+    @Override
     public void run() {
-        while(true){
+        while (true) {
             System.out.println("\n\nThreads Interrompidas:");
-            for(int i = 0; i<listSize; i++){
-                if(list.get(i).isInterrupted()){
+            for (int i = 0; i < listSize; i++) {
+                if (list.get(i).isInterrupted()) {
                     System.out.println("ThreadObserver say: A thread " + list.get(i).getId() + " foi interrompida.");
-                }                    
+                }
             }
             System.out.println("\n");
             try {
@@ -55,6 +51,6 @@ public class ThreadObserver extends Thread {
             } catch (InterruptedException ex) {
                 Logger.getLogger(ThreadObserver.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }    
+        }
     }
 }
